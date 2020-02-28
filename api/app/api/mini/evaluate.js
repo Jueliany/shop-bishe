@@ -19,7 +19,7 @@ router.post('/list',  async (ctx,next)=>{
     }
 })
 
-//付款
+//评价
 
 router.post('/creat', new Auth(8).m, async (ctx,next)=>{
     const body = ctx.request.body;
