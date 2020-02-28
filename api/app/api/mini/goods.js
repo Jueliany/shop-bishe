@@ -18,6 +18,15 @@ router.post('/list', async (ctx,next)=>{
         data: good
     }
 })
+router.get('/count', async (ctx,next)=>{
+    const body = ctx.request.body;
+    const good = await Goods.getGoodList(1,100,-1,1)
+    ctx.body = {
+        resultCode:0,
+        resultMsg: 'OK',
+        data: good
+    }
+})
 
 //分类商品
 router.post('/catalogGoods', async (ctx,next)=>{

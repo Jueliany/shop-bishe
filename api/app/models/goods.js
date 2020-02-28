@@ -121,6 +121,9 @@ class Goods extends Model {
     //获取热门商品
     static async getHotGoods(){
         const good = await Goods.findAll({
+            where:{
+                state:1
+            },
             limit:8,
             order:[['sold_number', 'DESC']]
         })
@@ -133,7 +136,8 @@ class Goods extends Model {
     static async getChoicenessGoods(){
         const good = await Goods.findAll({
             where:{
-                choiceness:1
+                choiceness:1,
+                state:1
             },
             limit:5,
         })
